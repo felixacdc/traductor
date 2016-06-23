@@ -8,13 +8,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">FOCUS.</a>
+      <a class="navbar-brand" href="{{ url('/') }}">FOCUS.</a>
     </div>
     <div class="navbar-collapse collapse navbar-right">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="index.html">Inicio</a></li>
-        <li><a href="about.html">Categorias</a></li>
-        <li><a href="contact.html">Palabras</a></li>
+        @yield('menu')
+        <li><a href="{{ url('/categorias') }}">Categorias</a></li>
+        <li><a href="{{ url('/palabras') }}">Buscar Palabras</a></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
