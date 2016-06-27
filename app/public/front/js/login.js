@@ -1,12 +1,44 @@
 (function(){
 
+    self.Verification = function(email, password, token) {
+        this.email = email;
+        this.password = password;
+        this.token = token;
+        this.url = "verify/";
+    }
+
+    self.Verification.prototype = {
+        verify: function(callback) {
+            $.ajax({
+                url: this.url,
+                headers: {'X-CSRF-TOKEN': this.token},
+                type: "POST",
+                data: {
+                    email: this.email,
+                    password: this.password
+                },
+                success: function(response) {
+                    if ( response == "ok") {
+                        callback(null);
+                    } else {
+                        return callback(new Error("Correo o contraseña incorrectas"));
+                    }
+                }
+            });
+        }
+    }
+
+})();
+
+$(document).ready(function() {
+
     $("#login").validate({
         rules: {
             email: {
                 email: true
             },
             password: {
-                min:8
+                minlength:8
             }
         },
         messages: {
@@ -16,9 +48,16 @@
             },
             password: {
                 required: "Ingrese el campo",
-                min: "La contraseña debe tener 8 o mas caracteres."
+                minlength: "La contraseña debe tener 8 o mas caracteres."
             }
+        },
+        submitHandler: function(form) {
+            var verification_data = new Verification($("#email").val(), $("#password").val(), $("#token").val());
+            verification_data.verify(function(err) {
+                if (err) return console.log(err.message);
+                form.submit();
+            });
         }
     });
 
-})();
+});

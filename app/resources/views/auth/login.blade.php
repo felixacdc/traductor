@@ -26,9 +26,10 @@
         <div class="form-box" id="login-box">
             <div class="header">Iniciar Sesión</div>
                 {!! Form::open(["url" => 'auth/login', "method" => "POST", "id" => "login", "class" => "form-validate"]) !!}
+                    <input type="hidden" name="token" id="token" value="{{ csrf_token() }}">
                     <div class="body bg-gray">
                         <div class="form-group">
-                            {!! Form::email("email", old('email'), ["class" => "form-control", "placeholder" => "Correo Electronico", "required" => "required"]) !!}
+                            {!! Form::email("email", old('email'), ["class" => "form-control", "id" => "email", "placeholder" => "Correo Electronico", "required" => "required"]) !!}
                         </div>
 
                         <div class="form-group">

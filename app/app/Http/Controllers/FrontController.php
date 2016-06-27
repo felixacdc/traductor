@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\User;
+use Auth;
 
 class FrontController extends Controller
 {
@@ -17,6 +19,15 @@ class FrontController extends Controller
     public function index()
     {
         return view('welcome');
+    }
+
+    public function verification_data(Request $request)
+    {
+        if ( Auth::attempt(['email' => $request->email, "password" => $request->password]) ) {
+            return "ok";
+        } else {
+            return "error";
+        }
     }
 
     /**

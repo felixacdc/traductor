@@ -17,3 +17,4 @@ Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
 Route::get('/', 'FrontController@index');
+Route::post("auth/verify/", "FrontController@verification_data");
