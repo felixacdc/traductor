@@ -12,7 +12,7 @@
 
         @include('front.partials.footer')
 
-        {!! Html::script("front/js/jquery-3.0.0.min.js") !!}
+        {!! Html::script("general/js/jquery-3.0.0.min.js") !!}
 
         @yield('scripts')
 

@@ -25,14 +25,14 @@
 
         <div class="form-box" id="login-box">
             <div class="header">Iniciar Sesión</div>
-                {!! Form::open(["url" => 'auth/login', "method" => "POST"]) !!}
+                {!! Form::open(["url" => 'auth/login', "method" => "POST", "id" => "login", "class" => "form-validate"]) !!}
                     <div class="body bg-gray">
                         <div class="form-group">
-                            {!! Form::email("email", old('email'), ["class" => "form-control", "placeholder" => "Correo Electronico"]) !!}
+                            {!! Form::email("email", old('email'), ["class" => "form-control", "placeholder" => "Correo Electronico", "required" => "required"]) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::password("password", ["class" => "form-control", "id" => "password", "placeholder" => "Contraseña"]) !!}
+                            {!! Form::password("password", ["class" => "form-control", "id" => "password", "placeholder" => "Contraseña", "required" => "required"]) !!}
                         </div>
 
                         <div class="form-group">
@@ -45,8 +45,10 @@
                 {!! Form::close() !!}
 
 
-        {!! Html::script("front/js/jquery-3.0.0.min.js") !!}
-        {!! Html::script("front/js/bootstrap.min.js")!!}
+        {!! Html::script("general/js/jquery-3.0.0.min.js") !!}
+        {!! Html::script("general/js/bootstrap.min.js")!!}
+        {!! Html::script("general/js/jquery.validate.js") !!}
+        {!! Html::script("front/js/login.js") !!}
 
     </body>
 </html>
