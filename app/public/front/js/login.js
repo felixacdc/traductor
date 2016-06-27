@@ -32,6 +32,8 @@
 
 $(document).ready(function() {
 
+    $(".homeloader").css("display", "none"), (new WOW).init();
+
     $("#login").validate({
         rules: {
             email: {
@@ -53,9 +55,11 @@ $(document).ready(function() {
         },
         submitHandler: function(form) {
             var verification_data = new Verification($("#email").val(), $("#password").val(), $("#token").val());
+
             verification_data.verify(function(err) {
-                if (err) return console.log(err.message);
-                form.submit();
+                if (err) {
+                    $(".alert").fadeIn();
+                } else form.submit();
             });
         }
     });

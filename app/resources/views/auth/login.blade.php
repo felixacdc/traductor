@@ -13,6 +13,7 @@
         <!-- Custom styles for this template -->
         {!! Html::style("front/css/font-awesome.min.css") !!}
         {!! Html::style("front/css/AdminLTE.css") !!}
+        {!!Html::style("front/css/animate.css")!!}
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,7 +24,17 @@
     </head>
     <body class="bg-black">
 
-        <div class="form-box" id="login-box">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <br><br>
+                <div class="alert alert-danger alert-dismissable homeloader wow flipInX" data-wow-duration=".8s">
+                    <i class="fa fa-ban"></i>
+                    <strong>Oh!</strong> Correo o contraseña incorrecta.<br><br>
+        		</div>
+            </div>
+        </div>
+        <div class="form-box wow zoomInDown" id="login-box">
             <div class="header">Iniciar Sesión</div>
                 {!! Form::open(["url" => 'auth/login', "method" => "POST", "id" => "login", "class" => "form-validate"]) !!}
                     <input type="hidden" name="token" id="token" value="{{ csrf_token() }}">
@@ -50,6 +61,7 @@
         {!! Html::script("general/js/bootstrap.min.js")!!}
         {!! Html::script("general/js/jquery.validate.js") !!}
         {!! Html::script("front/js/login.js") !!}
+        {!!Html::script("general/js/wow.min.js")!!}
 
     </body>
 </html>
