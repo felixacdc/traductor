@@ -18,3 +18,7 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
 Route::get('/', 'FrontController@index');
 Route::post("auth/verify/", "FrontController@verification_data");
+
+Route::group(['prefix' => 'home', 'namespace' => '\admin', 'middleware' => 'auth'], function() {
+    Route::get('/', 'UserController@dashboard');
+});

@@ -3419,3 +3419,7 @@ input:focus:invalid:focus, textarea:focus:invalid:focus, select:focus:invalid:fo
 .homeloader{
     display: none;
 }
+
+#login-box{
+    display: none;
+}

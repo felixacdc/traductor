@@ -32,7 +32,7 @@
 
 $(document).ready(function() {
 
-    $(".homeloader").css("display", "none"), (new WOW).init();
+    $("#login-box").css("display", "block"), (new WOW).init();
 
     $("#login").validate({
         rules: {
@@ -54,11 +54,13 @@ $(document).ready(function() {
             }
         },
         submitHandler: function(form) {
+            $("#login .btn-block").prop('disabled', true);
             var verification_data = new Verification($("#email").val(), $("#password").val(), $("#token").val());
 
             verification_data.verify(function(err) {
                 if (err) {
-                    $(".alert").fadeIn();
+                    $(".homeloader").fadeIn();
+                    $("#login .btn-block").prop('disabled', false);
                 } else form.submit();
             });
         }
