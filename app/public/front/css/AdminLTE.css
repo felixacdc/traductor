@@ -3416,6 +3416,11 @@ input:focus:invalid:focus, textarea:focus:invalid:focus, select:focus:invalid:fo
     border-color: #f56954 !important;
 }
 
+.alert {
+    position: absolute !important;
+    z-index: 100 !important;
+}
+
 .homeloader{
     display: none;
 }

@@ -14,6 +14,9 @@
         <!-- Main content -->
         <section class="content">
 
+            @include('admin/layout.partials.alertSuccess')
+            @include('admin/layout.partials.alertErrors')
+
             <div class="box  box-primary">
 
                 <div class="box-header">
@@ -55,6 +58,7 @@
     <!-- DATA TABES SCRIPT -->
     {!!Html::script("admin/js/datatables/jquery.dataTables.js")!!}
     {!!Html::script("admin/js/datatables/dataTables.bootstrap.js")!!}
+    {!! Html::script("general/js/jquery.validate.js") !!}
 
     <!-- page script -->
     <script type="text/javascript">

@@ -7,3 +7,5 @@
         <button type="button" class="btn btn-danger" data-dismiss="modal">cerrar</button>
     </div>
 {!! Form::close() !!}
+
+{!! Html::script("admin/js/own/categories.js") !!}

@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Http\Requests\CategoryRequest;
+
 use App\Category;
 
 class CategoryController extends Controller
@@ -38,9 +40,11 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
-        //
+        Category::create($request->all());
+
+        return redirect('home/category')->with("message", "Categoría creada correctamente.");
     }
 
     /**
