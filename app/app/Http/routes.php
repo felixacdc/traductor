@@ -26,7 +26,7 @@ Route::group(['prefix' => 'home', 'namespace' => '\admin', 'middleware' => 'auth
 
     // Rutas de las Categorias
     Route::resource('category', 'CategoryController',
-                    ['only' => ['index']]);
+                    ['only' => ['index', 'create', 'store']]);
 
     // Rutas de las Palabras
     Route::resource('word', 'WordController',

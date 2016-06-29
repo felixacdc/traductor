@@ -25,4 +25,15 @@ $(document).ready(function() {
             color: '#fff', // #rgb or #rrggbb or array of colors
         }
     });
+
+    /*
+    * Funcion para cargar contenido dinamicamente
+    */
+
+    $('.loadModal').on('click', function(e){
+        e.preventDefault();
+
+        var loadModal = new LoadModal($("#containerBase"), $(".titleEdit"), $(this));
+        loadModal.prepareView();
+    });
 });

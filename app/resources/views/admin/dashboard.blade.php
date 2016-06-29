@@ -7,7 +7,7 @@
         <section class="content-header">
             <h1>
                 Inicio
-                <small>Estas en la pagina de inicio</small>
+                <small>Escritorio del sistema.</small>
             </h1>
         </section>
 
