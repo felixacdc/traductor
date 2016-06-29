@@ -15,8 +15,18 @@
         </div>
         <ul class="sidebar-menu">
             <li>
-                <a href="{{ url('admin') }}">
+                <a href="{{ url('home') }}">
                     <i class="fa fa-dashboard"></i> <span> Inicio</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url('home/category') }}">
+                    <i class="fa fa-tags"></i> <span> Categorías</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url('home/word') }}">
+                    <i class="fa fa-shield"></i> <span> Palabras</span>
                 </a>
             </li>
         </ul>

@@ -20,5 +20,15 @@ Route::get('/', 'FrontController@index');
 Route::post("auth/verify/", "FrontController@verification_data");
 
 Route::group(['prefix' => 'home', 'namespace' => '\admin', 'middleware' => 'auth'], function() {
+
+    // Rutas del usuario
     Route::get('/', 'UserController@dashboard');
+
+    // Rutas de las Categorias
+    Route::resource('category', 'CategoryController',
+                    ['only' => ['index']]);
+
+    // Rutas de las Palabras
+    Route::resource('word', 'WordController',
+                    ['only' => ['index']]);
 });
