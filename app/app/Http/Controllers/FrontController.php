@@ -11,6 +11,13 @@ use Auth;
 
 class FrontController extends Controller
 {
+
+    // guest es un middleware que viene por defecto y que no le permite a los usuarios autentificados acceder a sitios que solo pueden acceder los no autentificados como la pagina de inicio
+    public function __construct()
+	{
+		$this->middleware('guest');
+	}
+
     /**
      * Display a listing of the resource.
      *
