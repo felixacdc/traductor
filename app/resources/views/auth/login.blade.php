@@ -12,7 +12,8 @@
 
         <!-- Custom styles for this template -->
         {!! Html::style("front/css/font-awesome.min.css") !!}
-        {!! Html::style("front/css/AdminLTE.css") !!}
+        {!! Html::style("admin/css/style.css") !!}
+        {!! Html::style("admin/css/style-responsive.css") !!}
         {!!Html::style("front/css/animate.css")!!}
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -22,46 +23,53 @@
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
     </head>
-    <body class="bg-black">
+    <body>
 
-        <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4">
-                <br><br>
-                <div class="alert alert-danger alert-dismissable homeloader wow flipInX" data-wow-duration=".8s">
-                    <i class="fa fa-ban"></i>
-                    <strong>Oh!</strong> Correo o contraseña incorrecta.<br><br>
-        		</div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <br><br>
+                    <div class="alert alert-danger homeloader wow flipInX" data-wow-duration=".8s"><strong>Oh!</strong> El correo electronico o la contraseña son incorrectos.
+                    </div></div>
+                </div>
             </div>
         </div>
-        <div class="form-box wow zoomInDown" id="login-box">
-            <div class="header">Iniciar Sesión</div>
-                {!! Form::open(["url" => 'auth/login', "method" => "POST", "id" => "login", "class" => "form-validate"]) !!}
-                    <input type="hidden" name="token" id="token" value="{{ csrf_token() }}">
-                    <div class="body bg-gray">
-                        <div class="form-group">
-                            {!! Form::email("email", old('email'), ["class" => "form-control", "id" => "email", "placeholder" => "Correo Electronico", "required" => "required"]) !!}
-                        </div>
 
-                        <div class="form-group">
-                            {!! Form::password("password", ["class" => "form-control", "id" => "password", "placeholder" => "Contraseña", "required" => "required"]) !!}
-                        </div>
+        <div id="login-page" class="wow zoomInDown">
+        	<div class="container">
+                {!! Form::open(["url" => 'auth/login', "method" => "POST", "id" => "login", "class" => "form-validate form-login"]) !!}
+                    <h2 class="form-login-heading">Iniciar Sesión</h2>
+                    <div class="login-wrap">
+                        <input type="hidden" name="token" id="token" value="{{ csrf_token() }}">
+                        {!! Form::email("email", old('email'), ["class" => "form-control", "id" => "email", "placeholder" => "Correo Electronico", "required" => "required"]) !!}
+                        <br>
+                        {!! Form::password("password", ["class" => "form-control", "id" => "password", "placeholder" => "Contraseña", "required" => "required"]) !!}
+                        <label class="checkbox">
+                            <span class="pull-right">
+                                <a href="#"> ¿Se te olvidó tu contraseña?</a>
 
-                        <div class="form-group">
-                            {!! Form::checkbox("remember", false) !!} Recordarme
-                        </div>
+                            </span>
+                        </label>
+                        <button class="btn btn-theme btn-block" type="submit"><i class="fa fa-lock"></i> Iniciar Sesión</button>
+
                     </div>
-                    <div class="footer">
-                        {!! Form::submit("Iniciar Sesión", ["class" => "btn bg-olive btn-block"]) !!}
-                    </div>
-                {!! Form::close() !!}
+                  {!! Form::close() !!}
+
+        	</div>
+        </div>
 
 
         {!! Html::script("general/js/jquery-3.0.0.min.js") !!}
         {!! Html::script("general/js/bootstrap.min.js")!!}
         {!! Html::script("general/js/jquery.validate.js") !!}
         {!! Html::script("front/js/login.js") !!}
-        {!!Html::script("general/js/wow.min.js")!!}
+        {!! Html::script("general/js/wow.min.js") !!}
+        {!! Html::script("admin/js/jquery.backstretch.min.js") !!}
+
+        <script>
+            $.backstretch("/front/img/login-bg.jpg", {speed: 500});
+        </script>
 
     </body>
 </html>
