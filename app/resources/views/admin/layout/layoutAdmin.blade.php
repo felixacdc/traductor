@@ -3,23 +3,21 @@
 @yield('styles')
 
     </head>
-    <body class="skin-blue">
+    <body>
+        <section id="container" >
+            <div id="element" class="introLoading"></div>
 
-        <div id="element" class="introLoading"></div>
-
-        @include('admin.layout.partials.header')
-
-        <div class="wrapper row-offcanvas row-offcanvas-left">
+            @include('admin.layout.partials.header')
 
             @include('admin.layout.partials.leftMenu')
 
             @yield('content')
 
-        </div><!-- ./wrapper -->
+            @include('admin.layout.partials.footer')
 
-    @include('admin.layout.partials.scripts')
+            @include('admin.layout.partials.scripts')
 
-    @yield('scripts')
-
+            @yield('scripts')
+        </section>
     </body>
 </html>

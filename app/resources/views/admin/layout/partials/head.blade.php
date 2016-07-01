@@ -11,7 +11,8 @@
         <!-- Ionicons -->
         {{-- {!!Html::style("css/ionicons.min.css")!!} --}}
         <!-- Theme style -->
-        {!!Html::style("front/css/AdminLTE.css")!!}
+        {!! Html::style("admin/css/style.css") !!}
+        {!! Html::style("admin/css/style-responsive.css") !!}
         {!!Html::style("admin/css/introLoader.css")!!}
         {{-- Animate CSS --}}
         {!!Html::style("front/css/animate.css")!!}

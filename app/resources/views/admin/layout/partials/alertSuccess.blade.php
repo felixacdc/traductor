@@ -2,9 +2,7 @@
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
-            <div class="alert alert-success alert-dismissable homeloader wow animated fadeInDown" id="error">
-                <i class="fa fa-check"></i>
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <div class="alert alert-success homeloader wow animated fadeInDown" id="error">
                 <b>Alerta!</b> {{Session::get('message')}}
             </div>
         </div>

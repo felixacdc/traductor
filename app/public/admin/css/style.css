@@ -2244,7 +2244,7 @@ label {
 
 .alert {
     position: absolute !important;
-    /*z-index: 100 !important;*/
+    z-index: 10000 !important;
 }
 
 .homeloader{
@@ -2267,4 +2267,23 @@ input:focus:invalid:focus, textarea:focus:invalid:focus, select:focus:invalid:fo
 /* Tabla de filtros*/
 .dataTables_filter, .dataTables_paginate {
     text-align: right;
+}
+
+.dataTables_wrapper {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.spaceRight {
+    margin-right: 10px;
+}
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+    background-color: #68dff0 !important;
+    border-color: #48bcb4 !important;
+    color: white !important;
+}
+
+.pagination > li > a, .pagination > li > span {
+    color: #68dff0 !important;
 }

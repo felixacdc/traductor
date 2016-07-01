@@ -1,43 +1,18 @@
-<!-- header logo: style can be found in header.less -->
-<header class="header">
-    <a href="../../index.html" class="logo">
-        <!-- Add the class icon to your logo image or logo icon to add the margining -->
-        Administrador
-    </a>
-    <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top" role="navigation">
-        <!-- Sidebar toggle button-->
-        <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </a>
-        <div class="navbar-right">
-            <ul class="nav navbar-nav">
-                <!-- User Account: style can be found in dropdown.less -->
-                <li class="dropdown user user-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="glyphicon glyphicon-user"></i>
-                        <span>{{ Auth::user()->name }} <i class="caret"></i></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <!-- User image -->
-                        <li class="user-header bg-light-blue">
-                            <img src="{{ asset('img/avatar.png') }}" class="img-circle" alt="Imagen de Usuario" />
-                            <p>
-                                Usuario: {{ Auth::user()->name }}
-                            </p>
-                        </li>
-                        <!-- Menu Footer-->
-                        <li class="user-footer">
-                            <div class="pull-right">
-                                <a href="{{ url('auth/logout') }}" class="btn btn-default btn-flat">Cerrar Sesión</a>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </nav>
+<!-- **********************************************************************************************************************************************************
+TOP BAR CONTENT & NOTIFICATIONS
+*********************************************************************************************************************************************************** -->
+<!--header start-->
+<header class="header black-bg" id="header">
+      <div class="sidebar-toggle-box">
+          <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+      </div>
+    <!--logo start-->
+    <a href="index.html" class="logo"><b>Administrador</b></a>
+    <!--logo end-->
+    <div class="top-menu">
+    	<ul class="nav pull-right top-menu">
+            <li><a class="logout" href="{{ url('auth/logout') }}">Cerrar Sesión</a></li>
+    	</ul>
+    </div>
 </header>
+<!--header end-->

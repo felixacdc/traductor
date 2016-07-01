@@ -3,7 +3,7 @@
     @include('admin.categories.partials.inputsForm')
 
     <div class="modal-footer">
-        {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!}
+        {!! Form::submit('Crear', ['class' => 'btn btn-theme']) !!}
         <button type="button" class="btn btn-danger" data-dismiss="modal">cerrar</button>
     </div>
 {!! Form::close() !!}
