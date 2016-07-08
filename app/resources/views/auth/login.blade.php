@@ -31,17 +31,20 @@
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
                     <br><br>
-                    <div class="alert alert-danger homeloader wow flipInX" data-wow-duration=".8s"><strong>Oh!</strong> El correo electronico o la contraseña son incorrectos.
-                    </div></div>
+                    <div class="alert alert-danger homeloader wow flipInX" data-wow-duration=".8s">
+                            <span class="alert-icon"><i class="fa fa-bolt"></i></span>&nbsp;&nbsp;
+                            <strong>Oh!</strong> Correo electronico o contraseña incorrectos.
+                    </div>
+                </div>
                 </div>
             </div>
         </div>
 
     	<div class="container">
-            {!! Form::open(["url" => 'auth/login', "method" => "POST", "id" => "login", "class" => "form-validate form-signin wow zoomInDown"]) !!}
+            {!! Form::open(["url" => 'auth/login', "method" => "POST", "id" => "login", "class" => "cmxform form-horizontal form-signin wow zoomInDown"]) !!}
                 <h2 class="form-signin-heading">Iniciar Sesión</h2>
                 <div class="login-wrap">
-                    <div class="user-login-info">
+                    <div class="user-login-info form-group">
                         <input type="hidden" name="token" id="token" value="{{ csrf_token() }}">
                         {!! Form::email("email", old('email'), ["class" => "form-control", "id" => "email", "placeholder" => "Correo Electronico", "required" => "required"]) !!}
                         {!! Form::password("password", ["class" => "form-control", "id" => "password", "placeholder" => "Contraseña", "required" => "required"]) !!}
