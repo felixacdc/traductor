@@ -9,6 +9,7 @@
         <meta name="author" content="Félix Méndez">
         <!-- Bootstrap core CSS -->
         {!! Html::style("front/css/bootstrap.css") !!}
+        {!! Html::style("admin/css/bootstrap-reset.css") !!}
 
         <!-- Custom styles for this template -->
         {!! Html::style("front/css/font-awesome.min.css") !!}
@@ -23,7 +24,7 @@
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
     </head>
-    <body>
+    <body class="login-body">
 
         <div class="container">
             <div class="row">
@@ -36,27 +37,20 @@
             </div>
         </div>
 
-        <div id="login-page" class="wow zoomInDown">
-        	<div class="container">
-                {!! Form::open(["url" => 'auth/login', "method" => "POST", "id" => "login", "class" => "form-validate form-login"]) !!}
-                    <h2 class="form-login-heading">Iniciar Sesión</h2>
-                    <div class="login-wrap">
+    	<div class="container">
+            {!! Form::open(["url" => 'auth/login', "method" => "POST", "id" => "login", "class" => "form-validate form-signin wow zoomInDown"]) !!}
+                <h2 class="form-signin-heading">Iniciar Sesión</h2>
+                <div class="login-wrap">
+                    <div class="user-login-info">
                         <input type="hidden" name="token" id="token" value="{{ csrf_token() }}">
                         {!! Form::email("email", old('email'), ["class" => "form-control", "id" => "email", "placeholder" => "Correo Electronico", "required" => "required"]) !!}
-                        <br>
                         {!! Form::password("password", ["class" => "form-control", "id" => "password", "placeholder" => "Contraseña", "required" => "required"]) !!}
-                        <label class="checkbox">
-                            <span class="pull-right">
-                                <a href="#"> ¿Se te olvidó tu contraseña?</a>
-
-                            </span>
-                        </label>
-                        <button class="btn btn-theme btn-block" type="submit"><i class="fa fa-lock"></i> Iniciar Sesión</button>
-
                     </div>
-                  {!! Form::close() !!}
 
-        	</div>
+                    <button class="btn btn-lg btn-login btn-block" type="submit"><i class="fa fa-lock"></i> Iniciar Sesión</button>
+
+                </div>
+              {!! Form::close() !!}
         </div>
 
 
@@ -65,11 +59,6 @@
         {!! Html::script("general/js/jquery.validate.js") !!}
         {!! Html::script("front/js/login.js") !!}
         {!! Html::script("general/js/wow.min.js") !!}
-        {!! Html::script("admin/js/jquery.backstretch.min.js") !!}
-
-        <script>
-            $.backstretch("/front/img/login-bg.jpg", {speed: 500});
-        </script>
 
     </body>
 </html>

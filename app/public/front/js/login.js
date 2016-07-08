@@ -34,6 +34,8 @@ $(document).ready(function() {
 
     $("#login-box").css("display", "block"), (new WOW).init();
 
+    var requiredVal = "Campo requerido.";
+
     $("#login").validate({
         rules: {
             email: {
@@ -45,11 +47,11 @@ $(document).ready(function() {
         },
         messages: {
             email: {
-                required: "Ingrese el campo",
+                required: requiredVal,
                 email: "Correo Electronico Incorrecto."
             },
             password: {
-                required: "Ingrese el campo",
+                required: requiredVal,
                 minlength: "La contraseña debe tener 8 o mas caracteres."
             }
         },
