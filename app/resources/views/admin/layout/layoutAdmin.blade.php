@@ -13,8 +13,6 @@
 
             @yield('content')
 
-            @include('admin.layout.partials.footer')
-
             @include('admin.layout.partials.scripts')
 
             @yield('scripts')
